@@ -4,8 +4,10 @@
   "description": "The source code for Virtual Jo- Farai's Senior CS project",
   "main": "main.js",
   "scripts": {
+    "predeploy": "node site-saver.js",
+    "deploy": "gcloud beta functions deploy virtual_jo_dev --trigger-http",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "testDeploy": "gcloud beta functions deploy virtual_jo_dev --trigger-http"
+    "testdeploy": "gcloud beta functions deploy virtual_jo_dev --trigger-http"
   },
   "author": "Farai Gandiya",
   "license": "GPL-3.0",
