@@ -4,17 +4,20 @@
   "description": "The source code for Virtual Jo- Farai's Senior CS project",
   "main": "main.js",
   "scripts": {
-    "predeploy": "node site-saver.js",
-    "deploy": "gcloud beta functions deploy virtual_jo_dev --trigger-http",
+    "predeploy": "npm run menusaver && npm run makecourses",
+    "deploy": "npm run testdeploy",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "testdeploy": "gcloud beta functions deploy virtual_jo_dev --trigger-http"
+    "testdeploy": "gcloud beta functions deploy virtual_jo_dev --trigger-http",
+    "menusaver": "node ./site-saver",
+    "makecourses": "node ./courses/course_grabber.js && node ./courses/objectify.js"
   },
   "author": "Farai Gandiya",
   "license": "GPL-3.0",
   "dependencies": {
     "actions-on-google": "1",
     "cheerio": "^1.0.0-rc.2",
-    "moment": "^2.22.1",
-    "request": "^2.85.0"
+    "moment": "2",
+    "npm-run-all": "4",
+    "request": "2"
   }
 }
