@@ -1,6 +1,6 @@
 # Virtual Jo: The Handy MCSP Helper
 
-This is the repository for my senior project.
+This is the repository for my senior project. **Note that I no longer maintain this.**
 
 ## Installation
 
