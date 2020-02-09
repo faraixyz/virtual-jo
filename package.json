@@ -9,7 +9,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "testdeploy": "gcloud beta functions deploy virtual_jo_dev --trigger-http",
     "menusaver": "node ./site-saver",
-    "makecourses": "node ./courses/course_grabber.js && node ./courses/objectify.js"
+    "makecourses": "node ./courses/course_grabber.js && node ./courses/objectify.js",
+    "build": "npm install && npm run menusaver && mkdir api && cp courses/ -r get_meals/ -r nextServed/ -r main.js api/"
   },
   "author": "Farai Gandiya",
   "license": "GPL-3.0",
