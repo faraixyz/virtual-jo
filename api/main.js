@@ -8,7 +8,7 @@
  * https://cloud.google.com/functions/docs/concepts/exec#file_system
  */
 const path = require("path");
-const fs = require("fs")
+const util = require('util')
 const App = require('actions-on-google').DialogflowApp;
 const MH = require(path.join(__dirname, "get_meals/meals.js"));
 const NS = require(path.join(__dirname, "nextServed/nextServed.js"));
@@ -16,6 +16,7 @@ const FC = require(path.join(__dirname, "courses/find_courses.js"));
 const CI = require(path.join(__dirname, "courses/course_info"));
 
 module.exports = (request, response) => {
+    console.log(util.inspect(request, false, Infinity))
     const app = new App({request, response});
     let actionMap = new Map();
     actionMap.set('get_meal', MH.handleGetMenuIntent);
