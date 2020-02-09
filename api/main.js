@@ -16,13 +16,12 @@ const FC = require(path.join(__dirname, "courses/find_courses.js"));
 const CI = require(path.join(__dirname, "courses/course_info"));
 
 module.exports = (request, response) => {
-    console.log(util.inspect(request.body, false, Infinity))
-    const j = request.body;
-    const app = new App({j, response});
+    const app = new App({request.body, response});
     let actionMap = new Map();
     actionMap.set('get_meal', MH.handleGetMenuIntent);
     actionMap.set('nextServed', NS.handleNextServedIntent);
     actionMap.set('find_courses', FC.handleFindCoursesIntent);
     actionMap.set('course_info', CI.handleCourseInfoIntent);
+    actionMap.set('result', request.body.result)
     app.handleRequest(actionMap);
 }
