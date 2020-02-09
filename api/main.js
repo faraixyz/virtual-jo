@@ -15,7 +15,7 @@ const NS = require(path.join(__dirname, "nextServed/nextServed.js"));
 const FC = require(path.join(__dirname, "courses/find_courses.js"));
 const CI = require(path.join(__dirname, "courses/course_info"));
 
-exports.virtual_jo_dev = (request, response) => {
+module.exports = (request, response) => {
     const app = new App({request, response});
     let actionMap = new Map();
     actionMap.set('get_meal', MH.handleGetMenuIntent);
