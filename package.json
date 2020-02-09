@@ -14,7 +14,7 @@
     "testdeploy": "gcloud beta functions deploy virtual_jo_dev --trigger-http",
     "menusaver": "node ./api/site-saver",
     "makecourses": "node ./courses/course_grabber.js && node ./courses/objectify.js",
-    "build": "node ./api/site-saver.js && mkdir public/"
+    "build": "node ./api/site-saver.js"
   },
   "author": "Farai Gandiya",
   "license": "GPL-3.0",
