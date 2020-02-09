@@ -12,7 +12,7 @@
     "deploy": "npm run testdeploy",
     "test": "echo \"Error: no test specified\" && exit 1",
     "testdeploy": "gcloud beta functions deploy virtual_jo_dev --trigger-http",
-    "menusaver": "node ./site-saver",
+    "menusaver": "node ./api/site-saver",
     "makecourses": "node ./courses/course_grabber.js && node ./courses/objectify.js"
   },
   "author": "Farai Gandiya",
