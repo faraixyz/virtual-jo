@@ -1,0 +1,23 @@
+{
+  "name": "virtual-jo",
+  "version": "0.1.1",
+  "description": "A voice powered virtual assistant for Wartburg College",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/faraixyz/virtual-jo.git"
+  },
+  "author": "Farai Gandiya",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/faraixyz/virtual-jo/issues"
+  },
+  "homepage": "https://github.com/faraixyz/virtual-jo#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "cheerio": "^1.0.0-rc.3"
+  }
+}
