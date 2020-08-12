@@ -18,8 +18,8 @@ async function getSearchPage () {
         __VIEWSTATE: $('#__VIEWSTATE').attr('value'),
         __VIEWSTATEGENERATOR: $('#__VIEWSTATEGENERATOR').attr('value'),
         __EVENTVALIDATION: $('#__EVENTVALIDATION').attr('value'),
-        ctl00$ContentPlaceHolder1$FormView1$Button_FindNow: 'Find Now',
+        __VIEWSTATEENCRYPTED: $('#__VIEWSTATEENCRYPTED').attr('value'),
+        Button_FindNow: 'Find Now',
     };
     return searchForm;
 }
-
