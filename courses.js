@@ -1,5 +1,6 @@
 const axios = require('axios').default;
 const cheerio = require('cheerio');
+const qs = require("querystring")
 const courseSearchURL = 'https://winnet.wartburg.edu/coursefinder/';
 
 /**
@@ -23,3 +24,28 @@ async function getSearchPage () {
     };
     return searchForm;
 }
+
+async function getAllCourses () {
+    const searchForm = await getSearchPage();
+    const defaults = {
+        DropDownList_Term: "2020 Fall Term",
+        DropDownList_MeetingTime: "all"
+    }
+    const formParams = Object.assign(searchForm, defaults);
+    const resultsPage = await axios.post(courseSearchURL, qs.stringify(formParams), {
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+            "Referer": "https://winnet.wartburg.edu/coursefinder/"
+        }
+    });
+    return resultsPage.data;
+}
+
+(async () => {
+    try {
+        await getAllCourses();
+        process.exit(0);
+    } catch {
+        console.error(error);
+    }
+})();
